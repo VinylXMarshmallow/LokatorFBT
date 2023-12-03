@@ -1,0 +1,24 @@
+Column(modifier=Modifier.fillMaxSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                    ) {
+                    Button(onClick = {
+                        Intent(applicationContext,RunningService::class.java).also {
+                            it.action=RunningService.Actions.START.toString()
+                            startService(it)
+                        }
+                    }) {
+                        Text(text = "Start Usługi w tle :D")
+
+                    }
+                    Button(onClick = {
+                        Intent(applicationContext,RunningService::class.java).also {
+                            it.action=RunningService.Actions.STOP.toString()
+                            startService(it)
+                        }
+                    }) {
+                        Text(text = "Stop Usługi w tle :D")
+
+                    }
+
+                }
