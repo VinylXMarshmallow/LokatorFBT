@@ -32,13 +32,12 @@ class RunningService : Service() {
             .setContentTitle("Running Notification")
             .setContentText("Placeholder Text")
             .build()
-
-
+        startForeground(1, notification)
 
         timerJob = GlobalScope.launch {
             repeat(Int.MAX_VALUE) {
                 printTestLog()
-                startForeground(1, notification)
+
                 delay(5000) // Delay for 2 seconds
             }
         }
