@@ -9,6 +9,9 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+
+
+
 @Suppress("DEPRECATION")
 class RunningService : Service() {
 
@@ -37,6 +40,9 @@ class RunningService : Service() {
         timerJob = GlobalScope.launch {
             repeat(Int.MAX_VALUE) {
                 printTestLog()
+                val httpInstance = Http()
+                httpInstance.HttpRequest()
+
 
                 delay(5000) // Delay for 2 seconds
             }
@@ -56,4 +62,5 @@ class RunningService : Service() {
     enum class Actions {
         START, STOP
     }
+
 }
